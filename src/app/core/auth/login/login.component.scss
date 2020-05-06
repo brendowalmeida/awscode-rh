@@ -1,0 +1,65 @@
+@import '../../../../assets/css/colors.scss';
+
+.login-container {
+    height: 100%;
+    background-color: $light-gray-background;
+    .left-container {
+        padding: 10% 0 0 10%;
+        .header-title {
+            text-align: center;
+            padding: 10px;
+            img {
+                width: 15%;
+                max-width: 60px;
+            }
+            p {
+                font-size: 26px;
+                font-weight: 600;
+                text-transform: uppercase;
+                color: $primary-blue-color;
+            }
+        }
+        .email-container {
+            text-align: center;
+            padding: 10px;
+            .input-email {
+                width: 45%;
+                mat-icon {
+                    color: $light-gray;
+                }
+                .icon-error {
+                    color: $red-color;
+                }
+            }
+        }
+        .request-container {
+            text-align: center;
+            height: 25px;
+            button {
+                width: 45%;
+                background-color: $primary-blue-color;
+            }
+            .recover-access {
+                padding-top: 10px;
+                color: $red-color;
+                font-size: 11px;
+                mat-icon {
+                    cursor: pointer;
+                    font-size: 14px !important;
+                    vertical-align: sub;
+                }
+                .not-access {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    .right-container {
+        padding-top: 7%;
+        img {
+            width: 65%;
+            margin-left: 15%;
+        }
+    }
+}

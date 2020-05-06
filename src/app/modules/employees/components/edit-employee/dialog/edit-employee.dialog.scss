@@ -1,0 +1,42 @@
+@import '../../../../../../assets/css/colors.scss';
+
+.edit-dialog {
+    position: relative;
+    .close-btn {
+        position: absolute;
+        cursor: pointer;
+        top: -15px;
+        right: -20px;
+        color: $black;
+        mat-icon {
+            font-size: 18px;
+        }
+        &:hover {
+            opacity: 0.7;
+            scale: transform(1.2);
+        }
+    }
+    .title-dialog {
+        color: $primary-blue-color;
+        padding: 10px 0 25px 0;
+        font-size: 18px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .form-container {
+        .input-form {
+            width: 100%;
+            padding: 5px 0px 5px 0px;
+        }
+    }
+    .actions-container {
+        padding-top: 10px;
+        text-align: center;
+        button {
+            width: 50%;
+            color: $white;
+            text-transform: uppercase;
+            background-color: $primary-blue-color;
+        }
+    }
+}

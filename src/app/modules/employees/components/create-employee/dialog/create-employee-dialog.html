@@ -1,0 +1,45 @@
+<div class="create-dialog">
+    <div class="close-btn">
+        <mat-icon (click)="close()">close</mat-icon>
+    </div>
+    <form [formGroup]="createForm" (ngSubmit)="save()">
+        <div class="title-dialog">
+            {{'EMPLOYEES.CREATE.TITLE' | translate}}
+        </div>
+        <div class="form-container">
+            <mat-form-field class="input-form" appearance="outline">
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-label>{{'EMPLOYEES.NAME' | translate}}</mat-label>
+                <input matInput placeholder="{{'EMPLOYEES.NAME' | translate}}" formControlName="name">
+                <mat-error *ngIf="hasError('name', 'required')">{{'EMPLOYEES.ERROR.REQUIRED' | translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-form" appearance="outline">
+                <mat-label>{{'EMPLOYEES.DATE_BIRTH' | translate}}</mat-label>
+                <input matInput [matDatepicker]="picker" [max]="maxDate" formControlName="dateBirth">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="hasError('dateBirth', 'required')">{{'EMPLOYEES.ERROR.REQUIRED' | translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-form" appearance="outline">
+                <mat-icon matSuffix>attach_money</mat-icon>
+                <mat-label>{{'EMPLOYEES.SALARY' | translate}}</mat-label>
+                <input matInput placeholder="{{'EMPLOYEES.SALARY' | translate}}" formControlName="salary" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', allowNegative: false, align: 'left'  }">
+                <mat-error *ngIf="hasError('salary', 'required')">{{'EMPLOYEES.ERROR.REQUIRED' | translate}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input-form" appearance="outline">
+                <mat-icon matSuffix>work</mat-icon>
+                <mat-label>{{'EMPLOYEES.OFFICE' | translate}}</mat-label>
+                <input matInput placeholder="{{'EMPLOYEES.OFFICE' | translate}}" formControlName="office">
+                <mat-error *ngIf="hasError('office', 'required')">{{'EMPLOYEES.ERROR.REQUIRED' | translate}}</mat-error>
+            </mat-form-field>
+            
+        </div>
+
+        <div class="actions-container">
+            <button mat-raised-button type="submit">{{'EMPLOYEES.SAVE' | translate}}</button>
+        </div>
+    </form>
+</div>

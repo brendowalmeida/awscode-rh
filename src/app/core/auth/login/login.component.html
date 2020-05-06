@@ -1,0 +1,34 @@
+
+<div class="col-md-12 login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="row">
+            <div class="col-md-6 left-container">
+                <div class="header-title">
+                    <img src="assets/images/logo.png">
+                    <p>{{'LOGIN.TITLE' | translate}}</p>
+                </div>
+                <div class="email-container">
+                    <mat-form-field class="input-email" appearance="outline">
+                        <mat-icon matSuffix [ngClass]="{'icon-error': f.email.touched && (hasError('email', 'required') || hasError('email', 'email'))}">email</mat-icon>
+                        <mat-label>{{'LOGIN.EMAIL' | translate}}</mat-label>
+                        <input matInput placeholder="{{'LOGIN.EMAIL' | translate}}" formControlName="email">
+                        <mat-error *ngIf="hasError('email', 'required')">{{'LOGIN.ERROR.REQUIRED' | translate}}</mat-error>
+                        <mat-error *ngIf="hasError('email', 'email')">{{'LOGIN.ERROR.EMAIL_INVALID' | translate}}</mat-error>
+                    </mat-form-field>
+                </div>
+
+                <div class="request-container">
+                    <button mat-raised-button type="submit" color="primary">{{'LOGIN.SUBMIT' | translate}}</button>
+                    <div class="recover-access">
+                        <mat-icon aria-hidden="false" aria-label="">lock</mat-icon>
+                        <span class="not-access">{{'LOGIN.NOT_ACCESS' | translate}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 right-container">
+                <img src="assets/images/group.png">
+            </div>
+        </div>
+    </form>
+</div>

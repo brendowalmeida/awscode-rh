@@ -1,0 +1,12 @@
+@import '../../../../../assets/css/colors.scss';
+
+.btn-create {
+    text-align: center;
+    button {
+        width: 40px;
+        background-color: $primary-blue-color;
+        &:focus {
+            outline: none;
+        }
+    }
+}

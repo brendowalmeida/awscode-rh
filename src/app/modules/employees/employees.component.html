@@ -1,0 +1,52 @@
+<div class="col-md-11 list-container">
+    <mat-card>
+        <mat-card-content>
+            <div class="header-container">
+                <div class="title-container">
+                    {{'EMPLOYEES.TITLE' | translate}}
+                </div>
+                
+                <div class="search-container">
+                    <mat-form-field class="input-search" appearance="outline">
+                        <mat-icon matSuffix>search</mat-icon>
+                        <mat-label>{{'EMPLOYEES.SEARCH' | translate}}</mat-label>
+                        <input matInput placeholder="{{'EMPLOYEES.SEARCH' | translate}}" [(ngModel)]="search">
+                    </mat-form-field>
+                </div>
+    
+                <div class="add-container">
+                    <app-create-employee (newEmployee)="addEmployee($event)"></app-create-employee>
+                </div>
+            </div>
+
+            <div class="data-container">
+                <table class="table table-hover table-employees">
+                    <thead>
+                      <tr>
+                        <th scope="col">{{'EMPLOYEES.NAME' | translate}}</th>
+                        <th scope="col">{{'EMPLOYEES.OFFICE' | translate}}</th>
+                        <th scope="col">{{'EMPLOYEES.DATE_BIRTH' | translate}}</th>
+                        <th scope="col">{{'EMPLOYEES.SALARY' | translate}}</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let e of listEmployees | searchByField: search">
+                        <td>{{ e.name }}</td>
+                        <td>{{ e.office }}</td>
+                        <td>{{ e.dateBirth | date: 'dd/MM/yyyy' }}</td>
+                        <td>{{ e.salary | currency:'BRL':'symbol':'0.0-2':'pt-BR' }}</td>
+                        <td class="action-column">
+                            <app-edit-employee [employeeSelected]="e" (editEmployee)="editEmployee($event)"></app-edit-employee>
+                            <mat-icon class="delete-btn" matTooltip="{{'EMPLOYEES.DELETE.REMOVE' | translate}}" (click)="deleteEmployee(e)">delete</mat-icon>
+                        </td>
+                      </tr>
+                      <tr *ngIf="!listEmployees || listEmployees.length === 0 || (listEmployees | searchByField: search).length === 0">
+                          <td>{{'EMPLOYEES.NO_RESULT' | translate}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

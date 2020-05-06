@@ -1,0 +1,55 @@
+{
+    "DEFAULT": {
+        "APPLICATION": "PORTAL - AWSCODE"
+    },
+    "CONFIRM_DELETE_DIALOG": {
+        "TITLE": "Excluir Registro",
+        "MESSAGE": "Você tem certeza que deseja excluir o registro: %s ?",
+        "NO": "Não",
+        "YES": "Sim"
+    },
+    "LOGIN": {
+        "TITLE": "Faça seu login",
+        "EMAIL": "Email",
+        "SUBMIT": "Login",
+        "NOT_ACCESS": "Não tenho acesso",
+        "ERROR": {
+            "REQUIRED": "Email é obrigatório",
+            "EMAIL_INVALID": "Email inválido"
+        }
+    },
+    "HEADER": {
+        "TITLE": "Grupo AWS",
+        "DISCONNECT": "Sair"
+    },
+    "EMPLOYEES": {
+        "TITLE": "Lista de funcionários",
+        "SEARCH": "Buscar funcionário por nome",
+        "NAME": "Nome",
+        "OFFICE": "Cargo",
+        "DATE_BIRTH": "Data de nascimento",
+        "SALARY": "Salário",
+        "NO_RESULT": "Nenhum resultado encontrado.",
+        "SAVE": "Salvar",
+        "CREATE": {
+            "ADD": "Adicionar",
+            "TITLE": "Cadastrar Funcionário"
+        },
+        "EDIT": {
+            "TITLE": "Editar Funcionário",
+            "CHANGE": "Alterar"
+        },
+        "DELETE": {
+            "REMOVE": "Remover"
+        },
+        "SUCCESS": {
+            "TITLE": "Sucesso",
+            "MSG": "Operação realizada com sucesso."
+        },
+        "ERROR": {
+            "TITLE": "Erro",
+            "REQUIRED": "Campo obrigatório",
+            "NOT_FOUND": "O funcionário não foi encontrado para realizar a operação."
+        }
+    }
+}
